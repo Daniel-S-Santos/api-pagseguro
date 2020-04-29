@@ -1,11 +1,10 @@
 const app = require("express")()
-const {res} = require('./src/PostReq')
 const axios = require('axios').default
 const cors = require('cors')
 const x2js = require('x2js')
 
 var convert = new x2js()
-
+var port = process.env.PORT || 3000
 // var {Builder, By, Key, } = require('selenium-webdriver')
 app.get('/api', (req, res)=>{
 res.sendFile(__dirname+ '/index.html')
@@ -60,4 +59,4 @@ res.sendFile(__dirname+ '/index.html')
 // xhr.send(new Int8Array()); 
 // xhr.send(document);
 
- app.listen(3788)
+ app.listen(port)
